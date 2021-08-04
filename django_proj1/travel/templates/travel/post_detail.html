@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html>
+{% extends "travel/layout.html" %}
 
-<head>
-    <title></title>
-    <style>
-        body {
-            background-color: lightyellow;
-        }
-    </style>
-</head>
+{% block content %}
 
-<body>
-    {{ post.message }}
+{{ post.message }}
 
-    <hr />
+<hr />
 
-    {{post.latitude}}
-    {{post.longitude}}
-</body>
+{{post.latitude}}
+{{post.longitude}}
 
-</html>
+{% endblock %}
