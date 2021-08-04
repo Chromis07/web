@@ -9,3 +9,11 @@ def index(request : HttpRequest):
     return render(request, "travel/post_list.html", {
         "post_list" : qs,
     })
+
+# Django Template
+
+def post_detail(request : HttpRequest, pk : int):
+    post = Post.objects.get(pk=pk)
+    return render(request, "travel/post_detail.html", {
+        "post" : post,
+})
