@@ -1,0 +1,16 @@
+<table>
+    <tbody>
+        {%for post in post_list%}
+        <tr>
+            <td>{{post.title}}</td>
+            <td>
+                {%if post.photo%}
+                <img src="{{post.photo.url}}" style="width:100px; height: 100px;" />
+                {%endif%}
+            </td>
+            <td>{{post.created_at}}</td>
+
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>

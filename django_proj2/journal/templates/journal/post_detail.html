@@ -1,0 +1,22 @@
+<table>
+    <tbody>
+        <tr>
+            <td>
+                {%if item.photo%}
+                <img src="{{post.photo.url}}" style="width:100px; height: 100px;" />
+                {%endif%}
+            </td>
+            <td>
+                <h1>{{post.title}}</h1>
+            </td>
+            <td>{{post.journalist}}</td>
+            <td>{{post.created_at}}</td>
+            <td>{{post.updated_at}}</td>
+            </hr>
+            <td>{{post.content}}</td>
+            </hr>
+            <td>{{comment.message}}</td>
+
+        </tr>
+    </tbody>
+</table>

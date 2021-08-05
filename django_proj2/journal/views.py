@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from journal.models import Journalist
+from journal.models import Journalist, Post
 from django.http import HttpRequest
 
 
@@ -10,5 +10,16 @@ def index(request: HttpRequest):
         "journal/post_list.html",
         {
             "post_list": qs,
+        },
+    )
+
+
+def post_detail(request: HttpRequest, pk: int):
+    post = Post.objects.get(pk=pk)
+    return render(
+        request,
+        "journal/post_detail.html",
+        {
+            "post": post,
         },
     )
