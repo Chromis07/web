@@ -2,15 +2,16 @@
     <tbody>
         <tr>
             <td>{{item.id}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.price}}</td>
-            <td>{{item.created_at}}</td>
-            <td>{{item.updated_at}}</td>
             <td>
                 {%if item.photo%}
                 <img src="{{item.photo.url}}" style="width:100px; height: 100px;" />
                 {%endif%}
             </td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.created_at}}</td>
+            <td>{{item.updated_at}}</td>
+
         </tr>
     </tbody>
 </table>
