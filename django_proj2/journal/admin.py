@@ -11,7 +11,7 @@ class PostAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     search_fields = ["title"]
-    list_display = ["photo", "title", "content", "journalist", "created_at"]
+    list_display = ["title", "journalist", "created_at"]
 
 
 @admin.register(Comment)
