@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from shop.models import Item, Review
+from shop.models import Item
 from django.http import HttpRequest
 
 
