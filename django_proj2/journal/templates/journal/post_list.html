@@ -1,16 +1,17 @@
-<table>
-    <tbody>
-        {%for post in post_list%}
-        <tr>
-            <td>{{post.title}}</td>
-            <td>
-                {%if post.photo%}
-                <img src="{{post.photo.url}}" style="width:100px; height: 100px;" />
-                {%endif%}
-            </td>
-            <td>{{post.created_at}}</td>
+{% extends 'journal/layout.html' %}
 
-        </tr>
-        {%endfor%}
-    </tbody>
-</table>
+{% block content %}
+<ul>
+    {% for post in post_list %}
+    <li>
+        <img src="{{ post.photo.url }}" style="width: 100px;" />
+        <a href="/journal/{{ post.pk }}/">
+            {{ post.title }}
+        </a>
+        {{ post.journalist.name }}
+    </li>
+    {% endfor %}
+</ul>
+<hr />
+<a href="/journal/new/">Post New</a>
+{% endblock %}

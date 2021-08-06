@@ -1,22 +1,30 @@
-<table>
-    <tbody>
-        <tr>
-            <td>
-                {%if item.photo%}
-                <img src="{{post.photo.url}}" style="width:100px; height: 100px;" />
-                {%endif%}
-            </td>
-            <td>
-                <h1>{{post.title}}</h1>
-            </td>
-            <td>{{post.journalist}}</td>
-            <td>{{post.created_at}}</td>
-            <td>{{post.updated_at}}</td>
-            </hr>
-            <td>{{post.content}}</td>
-            </hr>
-            <td>{{comment.message}}</td>
+{% extends 'journal/layout.html' %}
 
-        </tr>
-    </tbody>
-</table>
+{% block content %}
+<h2>{{ post.title }}</h2>
+
+<img src="{{ post.photo.url }}" />
+
+{{ post.content|linebreaks }}
+
+<hr />
+by {{ post.journalist.name }}
+at {{ post.created_at }}
+<hr />
+<ul>
+    {% for comment in comment_list %}
+    <li>
+        {{ comment.message }}
+        at {{ comment.created_at }}
+        <a href="/journal/{{ post.pk }}/comments/{{ comment.pk }}/edit/">Comment edit</a>
+    </li>
+    {% endfor %}
+</ul>
+<hr />
+<a href="/journal/">List</a>
+<a href="/journal/{{ post.pk }}/edit/">Edit</a>
+<a href="/journal/{{ post.pk }}/comments/new/">Comment New</a>
+
+
+
+{% endblock %}

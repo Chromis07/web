@@ -1,20 +1,21 @@
 from django.contrib import admin
 from journal.models import Journalist, Post, Comment
 
+# class JournalistAdmin(admin.ModelAdmin):
+#     pass
+# admin.site.register(Journalist, JournalistAdmin)
+
 
 @admin.register(Journalist)
-class PostAdmin(admin.ModelAdmin):
-    search_fields = ["name"]
-    list_display = ["name", "created_at", "updated_at"]
+class JournalistAdmin(admin.ModelAdmin):
+    pass
 
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    search_fields = ["title"]
-    list_display = ["title", "journalist", "created_at"]
+    list_display = ["title", "ip", "created_at"]
 
 
 @admin.register(Comment)
-class PostAdmin(admin.ModelAdmin):
-    search_fields = ["post"]
-    list_display = ["post", "message", "created_at", "updated_at"]
+class CommentAdmin(admin.ModelAdmin):
+    pass
