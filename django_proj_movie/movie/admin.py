@@ -11,7 +11,7 @@ class ActorAdmin((admin.ModelAdmin)):
 @admin.register(Movie)
 class MovieAdmin((admin.ModelAdmin)):
     search_fields = ["title"]
-    list_display = ["actor", "poster", "actor", "desc"]
+    list_display = ["title", "poster", "actor", "desc"]
 
 
 @admin.register(Video)

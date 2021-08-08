@@ -16,15 +16,12 @@ class Movie(models.Model):
     desc = models.TextField()
 
     def __str__(self) -> str:
-        return self.name
+        return self.title
 
 
 class Video(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     youtube_url = models.URLField()
-
-    def __str__(self) -> str:
-        return self.name
 
 
 class Review(models.Model):
