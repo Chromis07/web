@@ -11,7 +11,7 @@ class Actor(models.Model):
 
 class Movie(models.Model):
     actor = models.ForeignKey(Actor, on_delete=models.CASCADE)
-    movie_name = models.CharField(max_length=30)
+    title = models.CharField(max_length=30)
     poster = models.ImageField()
     desc = models.TextField()
 
@@ -20,7 +20,7 @@ class Movie(models.Model):
 
 
 class Video(models.Model):
-    movie_name = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     youtube_url = models.URLField()
 
     def __str__(self) -> str:
@@ -28,5 +28,5 @@ class Video(models.Model):
 
 
 class Review(models.Model):
-    movie_name = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     message = models.TextField()
