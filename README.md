@@ -1,2 +1,2 @@
 
-django_proj 연습
+django_proj 연습 (movie)
